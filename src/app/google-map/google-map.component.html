@@ -1,7 +1,14 @@
 <!-- app.component.html -->
-<div class="container"> 
+<!-- <div class="container"> 
     <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" (mapClick)="onMapClicked($event)">
     </agm-map>
     <div>Latitude: {{latitude}}</div>
     <div>Longitude: {{longitude}}</div>
+  </div> -->
+
+
+<div class="container">
+  <div id="my-mask" style="width: 750px; height: 250px; overflow: hidden;">
+    <img id="my-image" src="../../assets/Map.png" style="cursor: pointer;"/>
   </div>
+</div>

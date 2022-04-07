@@ -9,7 +9,7 @@
                 </select>
               </div>
               <div class="import-button">
-                  <button type="submit" class="btn btn-primary">Import Loans</button>
+                  <button type="submit" class="btn btn-primary" (click)="importLoan();">Import Loans</button>
               </div>
             </div>
           </div>
@@ -55,9 +55,13 @@
         </div>
     </div>
 
-    <div class="pie-chart">
-        <div>
+    <div class="graph">
+        <div class="pie-chart">
             <pie-chart></pie-chart>
         </div>
+        <div class="category-graph">
+            <category-area-chart></category-area-chart>
+        </div>
     </div>
+
 </div>

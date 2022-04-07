@@ -88,6 +88,13 @@
     // margin-right: 12px;
 }
 
-.pie-chart {
+.graph {
     margin-top: 4rem;
+    display: flex;
+    .pie-chart {
+        width: 85rem;
+    }
+    .category-graph {
+        width: 85rem;
+    }
 }

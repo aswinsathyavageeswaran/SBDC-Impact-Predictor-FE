@@ -11,8 +11,7 @@
 }
 
 .card-body {
-    box-shadow: 1px 1px 6px 1px #8c8b8b;
-    margin: 1rem;
+    margin: 1rem 9px 0;
     width: 25rem;
 }
 
@@ -20,14 +19,20 @@
     margin-left: 3rem;
 }
 
+.circle-wrap {
+    text-align: center;
+}
+
 .round-circle {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     box-shadow: 1px 1px 3px 3px #888585;
     text-align: center;
     vertical-align: middle;
     line-height: 250px;
+    margin: 0 115px;
+    display: inline-block;
     &::before {
         content: '';
         position: absolute;
@@ -41,18 +46,23 @@
     }
 }
 
+.map-wrap {
+    max-width: 1847px;
+    margin: auto;
+    border: 5px solid #fff;
+    box-shadow: 0 0 8px #484848;
+}
+
 .red {
     background-color: #800020;
 }
 
 .green {
     background-color: #427068;
-    margin-left: 10rem;
 }
 
 .blue {
     background-color: #035486;
-    margin-left: 12.5rem;
 }
 
 .count-container {
@@ -71,7 +81,7 @@
 }
 
 .value {
-    font-size: 82px;
+    font-size: 60px;
     color: #fff;
     text-align: center;
     // margin-top: 1rem;

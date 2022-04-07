@@ -18,8 +18,10 @@ import {
 	IgxDoughnutChartModule,
 	IgxRingSeriesModule,
 	IgxLegendModule,
-	IgxItemLegendModule
+	IgxItemLegendModule,
+  IgxCategoryChartModule
  } from "igniteui-angular-charts";
+import { CategoryAreaChart } from './category-area-chart/category-area-chart.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {
     PieChartComponent,
     MainComponent,
     DashboardComponent,
-    LoaderComponent
+    LoaderComponent,
+    CategoryAreaChart
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import {
     IgxRingSeriesModule,
     IgxLegendModule,
     IgxItemLegendModule,
+    IgxCategoryChartModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBvHMk7JaeCB6MtTJb9Z-CZyzigf2LDPOU',

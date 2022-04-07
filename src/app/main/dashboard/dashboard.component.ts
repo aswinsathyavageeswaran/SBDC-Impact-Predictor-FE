@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/app.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-    constructor() { }
+    constructor(
+        private appService: AppService
+    ) { }
 
     public years: Array<number> = [
         2018,
@@ -17,5 +20,9 @@ export class DashboardComponent implements OnInit {
 
     public ngOnInit(): void {
 
+    }
+
+    public importLoan(): void {
+        this.appService.mapImagName$.next("newyork_business.PNG")
     }
 }

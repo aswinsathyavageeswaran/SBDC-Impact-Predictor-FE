@@ -22,6 +22,12 @@ import {
   IgxCategoryChartModule
  } from "igniteui-angular-charts";
 import { CategoryAreaChart } from './category-area-chart/category-area-chart.component';
+import { LoanDetailsomponent } from './loan-details/loan-details.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from "@angular/material/table";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -32,7 +38,8 @@ import { CategoryAreaChart } from './category-area-chart/category-area-chart.com
     MainComponent,
     DashboardComponent,
     LoaderComponent,
-    CategoryAreaChart
+    CategoryAreaChart,
+    LoanDetailsomponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +52,15 @@ import { CategoryAreaChart } from './category-area-chart/category-area-chart.com
     IgxItemLegendModule,
     IgxCategoryChartModule,
     HttpClientModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatIconModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBvHMk7JaeCB6MtTJb9Z-CZyzigf2LDPOU',
       libraries: ['places']
     }),
+    NoopAnimationsModule,
     
   ],
   providers: [],

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
+import { MatDialog } from "@angular/material/dialog";
+import { LoanDetailsomponent } from 'src/app/loan-details/loan-details.component';
 
 @Component({
     selector: 'app-dashboard',
@@ -8,7 +10,8 @@ import { AppService } from 'src/app/app.service';
 })
 export class DashboardComponent implements OnInit {
     constructor(
-        private appService: AppService
+        private appService: AppService,
+        public dialog: MatDialog,
     ) { }
 
     public years: Array<number> = [
@@ -24,5 +27,9 @@ export class DashboardComponent implements OnInit {
 
     public importLoan(): void {
         this.appService.mapImagName$.next("newyork_business.PNG")
+    }
+
+    public displayLoanDetails(): void {
+        const dialogRef = this.dialog.open(LoanDetailsomponent);
     }
 }

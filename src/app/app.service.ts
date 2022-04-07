@@ -36,4 +36,9 @@ export class AppService {
     public getAccountDetails(): Observable<any> {
         return this.httpClient.get("http://localhost:57969/account/account-details/01010OA00P200");
     }
+
+    public getLoanDetails(year: any, place: any): Observable<any> {
+        const url = `https://localhost:44305/loans/${year}/${place}`;
+        return this.httpClient.get(url);
+    }
 }

@@ -1,0 +1,29 @@
+<mat-dialog-content class="mat-typography">
+<div class="loan-details-table-container main-wrapper">
+    <div class="title">
+        <h2 matDialogTitle>Commercial Loans</h2>
+        <button mat-icon-button (click)="close();" id="close-dialog-btn" class="popup-close-btn">
+            <mat-icon class="material-icons">close</mat-icon>
+        </button>
+    </div>
+
+        <table cellpadding="1">
+            <tr class="header-row">
+                <td>Credit Type</td>
+                <td>Amount Applied</td>
+                <td>Amount Approved</td>
+                <td>Action Taken Date</td>
+                <td>Status</td>
+            </tr>
+            <tr *ngFor=" let loan of loanDetails" class="content-row">
+                <td class="content-align">{{loan.creditTypeName}}</td>
+                <td class="content-align">{{loan.AmountApplied}}</td>
+                <td class="content-align">{{loan.AmountApproved}}</td>
+                <td class="content-align">{{loan.ActionTakenDate | date}}</td>
+                <td class="content-align">{{loan.Status ==0? 'Approved': 'Rejected'}}</td>
+            </tr>
+        </table>
+
+
+</div>
+</mat-dialog-content>

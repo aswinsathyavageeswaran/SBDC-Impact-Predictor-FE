@@ -22,6 +22,7 @@ import {
   IgxCategoryChartModule
  } from "igniteui-angular-charts";
 import { CategoryAreaChart } from './category-area-chart/category-area-chart.component';
+import { CostProjectionComponent } from './cost-projection/cost-projection.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CategoryAreaChart } from './category-area-chart/category-area-chart.com
     MainComponent,
     DashboardComponent,
     LoaderComponent,
-    CategoryAreaChart
+    CategoryAreaChart,
+    CostProjectionComponent
   ],
   imports: [
     BrowserModule,

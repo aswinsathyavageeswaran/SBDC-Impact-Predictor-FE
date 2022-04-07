@@ -25,6 +25,8 @@ export class AppService {
 
     public cycleNumber: number = 1;
 
+    public totalNumberofSBCLoans: number = 0;
+
     constructor(
         private httpClient: HttpClient
     ) {}

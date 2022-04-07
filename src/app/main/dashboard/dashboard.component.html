@@ -11,6 +11,12 @@
               <div class="import-button">
                   <button type="submit" class="btn btn-primary" (click)="importLoan();">Import Loans</button>
               </div>
+              <div class="import-button">
+                <select class="custom-select" [(ngModel)]="selectedLocation" (change)="scroll()">
+                    <option value="" selected>Location</option>
+                    <option *ngFor="let loc of locations" value="{{loc}}" selected>{{loc}}</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="map">

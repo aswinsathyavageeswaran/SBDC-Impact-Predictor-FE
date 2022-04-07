@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 
 @Component({
@@ -8,8 +9,18 @@ import { AppService } from '../app.service';
 })
 export class MainComponent {
   constructor(
-      public appService: AppService
+      public appService: AppService,
+      private router: Router
   ) { 
       this.appService.pageTitle = "Dashboard";
+  }
+
+  public goToHome() {
+    this.appService.pageTitle = "Dashboard";
+    this.router.navigateByUrl("main/dashboard");
+  }
+
+  public gotoLogin() {
+      this.router.navigateByUrl("/login")
   }
 }

@@ -1,0 +1,79 @@
+.result-wrap {
+    text-align: center;
+
+    > div {
+        display: inline-block;
+        width: 340px;
+        margin: 0 20px;
+    }
+
+    .result {
+        position: relative;
+        width: 275px;
+        min-height: 210px;
+        margin: 0 35px;
+        background-image: url("../../assets/time.png");
+        background-size: cover;
+
+        &.cost {
+            background-image: url("../../assets/dollar.png");
+            background-size: 175px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            top: 7px;
+        }
+    }
+
+    .txt {
+        text-align: center;
+        margin-top: 18px;
+        font-style: italic;
+        font-weight: 600;
+
+        &.cost-txt {
+            position: relative;
+            top: -22px;
+        }
+    }
+}
+
+.hours {
+    position: absolute;
+    top: 95px;
+    left: 78px;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card-title {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.calc-btn {
+    margin-top: 50px;
+}
+
+.amount {
+    position: absolute;
+    font-size: 50px;
+    top: 43px;
+    left: 93px;
+    font-size: 45px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.dollar-img {
+    width: 175px;
+}
+
+.dollar {
+    position: absolute;
+    top: 86px;
+    left: 124px;
+    font-size: 45px;
+    font-weight: bold;
+    font-style: italic;
+}

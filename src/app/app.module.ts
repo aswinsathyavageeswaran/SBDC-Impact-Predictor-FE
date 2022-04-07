@@ -28,6 +28,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableModule } from "@angular/material/table";
 import { MatIconModule } from "@angular/material/icon";
+import { CostProjectionComponent } from './cost-projection/cost-projection.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MatIconModule } from "@angular/material/icon";
     DashboardComponent,
     LoaderComponent,
     CategoryAreaChart,
-    LoanDetailsomponent
+    LoanDetailsomponent,
+    CostProjectionComponent
   ],
   imports: [
     BrowserModule,

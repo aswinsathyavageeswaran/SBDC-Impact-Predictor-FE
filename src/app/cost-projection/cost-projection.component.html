@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h5 class="card-title">Default Time for a loan (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Default Time in hours"
+                    [(ngModel)]="defaultTime" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <h5 class="card-title">Training Time (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Training Time in hours"
+                    [(ngModel)]="trainingTime" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <h5 class="card-title">Cost per hour ($)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Cost per hour" [(ngModel)]="costPerHour" />
+            </div>
+        </div>
+        
+        <div class="col-3">
+            <button type="button" [disabled]="!enableSubmit" class="btn btn-primary calc-btn" (click)="calculate();">Calculate</button>
+        </div>
+    </div>
+</div>
+<div class="result-wrap">
+    <div>
+        <div class="result">
+            <div class="hours">
+                {{totalEstimatedTimeToCollectData}}
+            </div>
+        </div>
+        <div class="txt">Estimated time to collect data for each loan in the future</div>
+    </div>
+    <div>
+        <div class="result cost">
+            <div class="amount">
+                {{totalCostPerson}}
+            </div>
+            <div class="dollar">
+                $
+            </div>
+        </div>
+        <div class="txt cost-txt">Total Cost per employee</div>
+    </div>
+    <div>
+        <div class="result">
+            <div class="hours">
+                {{totalTimeForReporting}}
+            </div>
+        </div>
+        <div class="txt">Estimated time to perfect the reporting of the ECOA SBDC in the future</div>
+    </div>
+</div>

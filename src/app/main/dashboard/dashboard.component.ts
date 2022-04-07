@@ -17,6 +17,11 @@ export class DashboardComponent implements OnInit {
         2020,
         2021
     ];
+    public selectedLocation: string = "";
+
+    public locations: Array<string> = [
+        "Texas"
+    ];
 
     public ngOnInit(): void {
 
@@ -25,4 +30,14 @@ export class DashboardComponent implements OnInit {
     public importLoan(): void {
         this.appService.mapImagName$.next("newyork_business.PNG")
     }
+
+    public scroll(): void {
+        if (this.selectedLocation == "Texas") {
+            var test = document.getElementById("my-image");
+            if (test) {
+                test.style.top = "-410px"
+            }
+        }
+    }
+    
 }

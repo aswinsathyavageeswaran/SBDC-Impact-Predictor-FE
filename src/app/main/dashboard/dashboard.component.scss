@@ -1,0 +1,83 @@
+.dashboard-container {
+    margin-top: 1rem;
+    .flex-container {
+        display: flex;
+    }
+}
+
+.year-dropdown {
+    width: 150px;
+    margin-left: 13px;
+}
+
+.card-body {
+    box-shadow: 1px 1px 6px 1px #8c8b8b;
+    margin: 1rem;
+    width: 25rem;
+}
+
+.import-button {
+    margin-left: 3rem;
+}
+
+.round-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px 3px #888585;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 250px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+        // box-shadow: inset 0 0 50px rgba(255, 255, 255, .5);
+        filter: blur(5px);
+    }
+}
+
+.red {
+    background-color: #800020;
+}
+
+.green {
+    background-color: #427068;
+    margin-left: 10rem;
+}
+
+.blue {
+    background-color: #035486;
+    margin-left: 12.5rem;
+}
+
+.count-container {
+    // width: 640px; /* Can be in percentage also. */
+    // height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.heading {
+    margin-top: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.value {
+    font-size: 82px;
+    color: #fff;
+    text-align: center;
+    // margin-top: 1rem;
+    // margin-right: 12px;
+}
+
+.pie-chart {
+    margin-top: 4rem;
+}

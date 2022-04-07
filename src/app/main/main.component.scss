@@ -1,0 +1,30 @@
+.main-container {
+    .app-bar {
+        height: 70px;
+        box-shadow: 1px 1px 1px 0px #afafafe8;
+        background: #ffffff;
+        opacity: 0.85;
+        border-bottom: 4px solid #84d3fc;
+        text-align: center;
+        display: flex;
+        .page-title {
+            font-size: 19px;
+            font-weight: 600;
+            // margin-left: 50%;
+            align-self: center;
+        }
+        .avatar {
+            margin-left: auto;
+            margin-right: 1rem;
+            img {
+                width: 70px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .bread-crumb {
+            align-self: center;
+        }
+    }
+}

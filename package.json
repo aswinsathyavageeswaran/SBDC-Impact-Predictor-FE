@@ -24,14 +24,18 @@
     "@finastra/angular-theme": "^3.0.0",
     "@types/jqueryui": "^1.12.16",
     "bootstrap": "^4.5.3",
+    "chart.js": "^2.9.3",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
-    "ngx-bootstrap": "^4.3.0",
     "ng2-google-charts": "^7.0.0",
+    "ngx-bootstrap": "^4.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "igniteui-angular": "13.0.0",
+    "igniteui-angular-charts": "13.0.0",
+    "igniteui-angular-core": "13.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.1.2",

@@ -25,15 +25,9 @@ export class AppService {
 
     public cycleNumber: number = 1;
 
+    public totalNumberofSBCLoans: number = 0;
+
     constructor(
         private httpClient: HttpClient
     ) {}
-
-    public getWeatherData(): Observable<any> {
-        return this.httpClient.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/348755?apikey=VuZRr74Nj6mYLOcYxlm74DhRSQmj8Z9a");
-    }
-
-    public getAccountDetails(): Observable<any> {
-        return this.httpClient.get("http://localhost:57969/account/account-details/01010OA00P200");
-    }
 }

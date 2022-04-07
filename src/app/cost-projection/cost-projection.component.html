@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h5 class="card-title">Default Time for a loan (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Default Time in hours"
+                    [(ngModel)]="defaultTime" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <h5 class="card-title">Training Time (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Training Time in hours"
+                    [(ngModel)]="trainingTime" />
+            </div>
+        </div>
+
+        <div class="col-3">
+            <h5 class="card-title">Cost per hour ($)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Cost per hour" [(ngModel)]="costPerHour" />
+            </div>
+        </div>
+        
+        <div class="col-3">
+            <button type="button" [disabled]="!enableSubmit" class="btn btn-primary mt-3" (click)="calculate();">Calculate</button>
+        </div>
+    </div>
+</div>
+
+<div style="position: relative;">
+    <img src="../../assets/time.png">
+    <div class="hours">
+        100
+    </div>
+</div>

@@ -30,3 +30,35 @@
         }
     }
 }
+
+.avatar-container {
+    position: absolute;
+    width: 150px;
+    height: 154px;
+    background: #fff;
+    right: 22px;
+    z-index: 999999;
+}
+
+.home-icon {
+    margin-top: 16px;
+    margin-left: 32px;
+    &:hover {
+        cursor: pointer;
+    }
+    img {
+        width: 32px;
+
+    }
+}
+
+.logout-icon {
+    margin-top: 16px;
+    margin-right: 14px;
+    &:hover {
+        cursor: pointer;
+    }
+    img {
+        width: 32px;
+    }
+}

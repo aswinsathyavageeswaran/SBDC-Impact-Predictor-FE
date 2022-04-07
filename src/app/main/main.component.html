@@ -5,11 +5,22 @@
                 Dashboard
             </div>
         </div> -->
+        <div class="home-icon" (click)="goToHome();" title="Go to Home">
+            <img src="../../assets/home-icon.png">
+        </div>
         <div class="page-title">
             {{appService.pageTitle}}
         </div>
-        <div class="avatar">
-            <img src="../../assets/avatar.png">
+        <div class="logout-icon" (click)="gotoLogin();" title="Logout">
+            <img src="../../assets/logout.png">
+        </div>
+        <div style="position: relative;">
+            <div class="avatar">
+                <img src="../../assets/avatar.png">
+            </div>
+            <!-- <div class="avatar-container">
+
+            </div> -->
         </div>
     </div>
 </div>

@@ -24,11 +24,11 @@ export class DashboardComponent implements OnInit {
     ];
 
     public ngOnInit(): void {
-
+        this.appService.pageTitle = "Dashboard";
     }
 
     public importLoan(): void {
-        this.appService.mapImagName$.next("newyork_business.PNG")
+        
     }
 
     public scroll(): void {

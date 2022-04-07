@@ -23,7 +23,7 @@ export class CostProjectionComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        
+        this.calculate();
     }
 
     public calculate(): void {

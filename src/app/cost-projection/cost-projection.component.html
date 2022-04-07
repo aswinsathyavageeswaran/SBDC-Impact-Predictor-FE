@@ -24,14 +24,19 @@
         </div>
         
         <div class="col-3">
-            <button type="button" [disabled]="!enableSubmit" class="btn btn-primary mt-3" (click)="calculate();">Calculate</button>
+            <button type="button" [disabled]="!enableSubmit" class="btn btn-primary calc-btn" (click)="calculate();">Calculate</button>
         </div>
     </div>
 </div>
-
-<div style="position: relative;">
-    <img src="../../assets/time.png">
-    <div class="hours">
-        100
+<div class="result-wrap">
+    <div class="result">
+        <div class="hours">
+            100
+        </div>
+    </div>
+    <div class="result">
+        <div class="hours">
+            10
+        </div>
     </div>
 </div>

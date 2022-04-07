@@ -1,8 +1,31 @@
+.result-wrap {
+    text-align: center;
+
+    .result {
+        display: inline-block;
+        position: relative;
+        width: 275px;
+        min-height: 210px;
+        margin: 0 35px;
+        background-image: url("../../assets/time.png");
+        background-size: cover;
+    }
+}
+
 .hours {
     position: absolute;
-    top: 101px;
-    left: 86px;
+    top: 95px;
+    left: 78px;
     font-size: 50px;
     font-weight: bold;
     font-style: italic;
+}
+
+.card-title {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.calc-btn {
+    margin-top: 50px;
 }

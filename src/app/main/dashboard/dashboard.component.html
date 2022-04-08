@@ -9,7 +9,10 @@
                     </select>
                 </div>
                 <div class="import-button">
-                    <button type="submit" class="btn btn-primary" (click)="importLoan();">Import Loans</button>
+                    <input type="file" class="import-input" id="importLoans" name="importLoans">
+                    <button type="submit" class="btn btn-primary" (click)="importLoan();">
+                        Import Loans
+                    </button>
                 </div>
                 <div class="import-button">
                     <select class="custom-select" [(ngModel)]="selectedLocation" (change)="scroll()">

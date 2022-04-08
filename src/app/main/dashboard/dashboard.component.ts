@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
         2021
     ];
     public selectedLocation: string = "";
-    public selectedYear: any = 0;
+    public selectedYear: any = 2021;
     public showResult: boolean = false;
 
     public locations: Array<string> = [
@@ -84,28 +84,22 @@ export class DashboardComponent implements OnInit {
     public smallBusinessLoanCount!: number;
 
     public ngOnInit(): void {
-        this.appService.isLoading = true;
         this.appService.pageTitle = "Dashboard";
-        this.getLoanDetails();
     }
 
     public importLoan(): void {
-
+        this.getLoanDetails();
     }
 
     public scroll(): void {
         this.appService.isLoading = true;
-        var root = this;
-        setTimeout(() => {
-            root.appService.isLoading = false;
-            root.showResult = true;
-        }, 2000);
         if (this.selectedLocation == "Texas") {
             var test = document.getElementById("my-image");
             if (test) {
                 test.style.top = "-410px"
             }
         }
+        this.getLoanDetails();
     }
 
     public yearChanged(): void {
@@ -123,6 +117,7 @@ export class DashboardComponent implements OnInit {
     }
 
     private getLoanDetails(): void {
+        this.appService.isLoading = true;
         var year = 2021;
         var place = "California";
         this.appService.getLoanDetails(year, place)

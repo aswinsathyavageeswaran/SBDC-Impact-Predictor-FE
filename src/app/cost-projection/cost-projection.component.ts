@@ -38,7 +38,6 @@ export class CostProjectionComponent implements OnInit {
     }
 
     public calculate(): void {
-        this.appService.totalNumberofSBCLoans = 50;
         this.appService.isLoading = true;
         var root = this;
         setTimeout(() => {

@@ -119,11 +119,13 @@ export class DashboardComponent implements OnInit {
     private getLoanDetails(): void {
         this.appService.isLoading = true;
         var year = 2021;
-        var place = "California";
+        var place = "Texas";
         this.appService.getLoanDetails(year, place)
         .subscribe(
             (loanDetails: Array<any>) => {
                 this.appService.isLoading = false;
+                this.showResult = true;
+                this.appService.totalNumberofSBCLoans = loanDetails.filter(l => l.MinorityOwned).length;
                 if (loanDetails) {
                     this.loanDetails = loanDetails;
                     this.loanDetails.map(loan => {

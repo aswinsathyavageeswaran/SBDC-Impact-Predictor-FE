@@ -42,7 +42,7 @@ export class AppService {
     }
 
     public getLoanDetails(year: any, place: any): Observable<any> {
-        const url = `https://localhost:44305/loans/${year}/${place}`;
+        const url = `https://sdbcimpactpredictor-api.azurewebsites.net/loans/${year}/${place}`;
         return this.httpClient.get(url);
     }
 }

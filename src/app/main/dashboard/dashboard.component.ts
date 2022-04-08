@@ -29,6 +29,9 @@ export class DashboardComponent implements OnInit {
     public locations: Array<string> = [
         "Texas"
     ];
+    public loanDetails!: Array<any>;
+    public commercialLoanCount!: number;
+    public smallBusinessLoanCount!: number;
 
     public ngOnInit(): void {
         this.appService.isLoading = true;
@@ -37,6 +40,7 @@ export class DashboardComponent implements OnInit {
             root.appService.isLoading = false;
         }, 2000);
         this.appService.pageTitle = "Dashboard";
+        this.getLoanDetails();
     }
 
     public importLoan(): void {
@@ -67,7 +71,52 @@ export class DashboardComponent implements OnInit {
         this.router.navigateByUrl("main/costprojection");
     }    
     public displayLoanDetails(): void {
-        const dialogRef = this.dialog.open(LoanDetailPopComponent);
+        const dialogRef = this.dialog.open(LoanDetailPopComponent, {
+            data: this.loanDetails
+        });
+    }
+
+    private getLoanDetails(): void {
+        var year = 2021;
+        var place = "California";
+        this.appService.getLoanDetails(year, place).subscribe(
+            (loanDetails: Array<any>) => {
+                if (loanDetails) {
+
+                    this.loanDetails = loanDetails;
+                    
+                    this.loanDetails.map(loan =>{
+                        loan.creditTypeName = this.getCreditTypeName(loan.CreditType);
+                    });
+                    this.commercialLoanCount = this.loanDetails.length;
+                    this.smallBusinessLoanCount = this.loanDetails.filter(loan => loan.MinorityOwned).length;
+
+                }
+            }
+        );
+    }
+
+    public getCreditTypeName(creditType: any): string {
+        switch (creditType) {
+            case 0:
+                return "TermLoanUnsecured";
+            case 1:
+                return "TermLoanSecured";
+            case 2:
+                return "LineOfCreditUnsecured";
+            case 3:
+                return "LineOfCreditSecured";
+            case 4:
+                return "CreditCard";
+            case 5:
+                return "MerchantCashAdvance";
+            case 6:
+                return "OtherSalesBasedFinancingTransaction";
+            case 7:
+                return "Other";
+            default:
+                return ""
+        }
     }
     
 }

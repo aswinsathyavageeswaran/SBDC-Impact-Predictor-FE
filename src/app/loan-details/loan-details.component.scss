@@ -1,0 +1,56 @@
+
+  .loan-details-table-container {
+        .title {
+        display: flex;
+
+        .popup-close-btn {
+            margin-top: -0.5rem;
+            background: none;
+            border: none;
+        }
+
+        h2 {
+            flex: 1;
+            margin: 0;
+        }
+
+        button {
+            flex: 0 0 auto;
+            margin-left: 1rem;
+        }
+    }
+    table {
+
+      width: 100%;
+      border: solid 0.0625rem #aeaeae;
+      .header-row {
+        color: black;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-align: center;
+
+        td {
+          padding: 1rem;
+        }
+      }
+      .content-row {
+        border: solid 0.0625rem #aeaeae;
+        font-size: 14px;
+
+        td {
+          padding: 1rem;
+          word-break: break-all;
+        }
+
+        td.content-align {
+          text-align: center;
+        }
+      }
+    }
+  }
+  
+  .main-wrapper {
+    background-image: url("../../assets/graphic-design-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

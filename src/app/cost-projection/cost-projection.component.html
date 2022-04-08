@@ -1,29 +1,55 @@
 <div class="container">
     <div class="row">
-        <div class="col-3">
-            <h5 class="card-title">Default Time for a loan (Hour)</h5>
+        <div class="col-4">
+            <h5 class="card-title">SBDC time per Loan (Minutes)</h5>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter Default Time in hours"
-                    [(ngModel)]="defaultTime" />
+                <input type="text" class="form-control" placeholder="Enter SBDC time per Loan in minutes"
+                    [(ngModel)]="sbdcTimePerLoan" />
             </div>
         </div>
 
-        <div class="col-3">
-            <h5 class="card-title">Training Time (Hour)</h5>
+        <div class="col-4">
+            <h5 class="card-title">Number of employees to be trained</h5>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter Training Time in hours"
-                    [(ngModel)]="trainingTime" />
+                <input type="text" class="form-control" placeholder="Enter Number of employees to be trained"
+                    [(ngModel)]="numberofEmployees" />
             </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-4">
+            <h5 class="card-title">Annual Training Time (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Annual Training Time" [(ngModel)]="annualTrainingTime" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h5 class="card-title">SBDC data reporting data preparation (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter SBDC data reporting data preparation in hours"
+                    [(ngModel)]="sbdcDataReportingTime" />
+            </div>
+        </div>
+
+        <div class="col-4">
+            <h5 class="card-title">Number of Loans</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter number of Loans"
+                    [(ngModel)]="loanCount" />
+            </div>
+        </div>
+
+        <div class="col-4">
             <h5 class="card-title">Cost per hour ($)</h5>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Enter Cost per hour" [(ngModel)]="costPerHour" />
             </div>
         </div>
-        
-        <div class="col-3">
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
             <button type="button" [disabled]="!enableSubmit" class="btn btn-primary calc-btn" (click)="calculate();">Calculate</button>
         </div>
     </div>

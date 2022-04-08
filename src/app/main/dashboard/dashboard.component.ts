@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { MatDialog } from "@angular/material/dialog";
-import { LoanDetailsomponent } from 'src/app/loan-details/loan-details.component';
+import { LoanDetailPopComponent } from 'src/app/loan-details/loan-details.component';
 
 @Component({
     selector: 'app-dashboard',
@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit {
         this.router.navigateByUrl("main/costprojection");
     }    
     public displayLoanDetails(): void {
-        const dialogRef = this.dialog.open(LoanDetailsomponent);
+        const dialogRef = this.dialog.open(LoanDetailPopComponent);
     }
     
 }

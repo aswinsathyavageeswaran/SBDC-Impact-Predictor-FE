@@ -42,6 +42,4 @@ export class LoginComponent implements OnInit {
       root.appService.isLoading = false;
     }, 4000);
   }
-
-
 }

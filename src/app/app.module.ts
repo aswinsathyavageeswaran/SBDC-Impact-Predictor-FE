@@ -22,7 +22,7 @@ import {
   IgxCategoryChartModule
  } from "igniteui-angular-charts";
 import { CategoryAreaChart } from './category-area-chart/category-area-chart.component';
-import { LoanDetailsomponent } from './loan-details/loan-details.component';
+import { LoanDetailPopComponent } from './loan-details/loan-details.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -40,7 +40,7 @@ import { CostProjectionComponent } from './cost-projection/cost-projection.compo
     DashboardComponent,
     LoaderComponent,
     CategoryAreaChart,
-    LoanDetailsomponent,
+    LoanDetailPopComponent,
     CostProjectionComponent
   ],
   imports: [

@@ -10,7 +10,7 @@ import { CreditType } from "../Helpers/credit-type.enum";
     templateUrl: "./loan-details.component.html",
     styleUrls: ["./loan-details.component.scss"]
 })
-export class LoanDetailsomponent implements OnInit {
+export class LoanDetailPopComponent implements OnInit {
     public loanDetails!: Array<any>;
     public displayedColumns: Array<string> = ['creditTypeName', 'AmountApplied', 'AmountApproved', 'ActionTakenDate', 'Status'];
     //public displayedColumns: Array<string> = ['Credit Type', 'Amount Applied', 'Amount Approved', 'Action Taken Date', 'Status'];
@@ -19,7 +19,7 @@ export class LoanDetailsomponent implements OnInit {
     paginator!: MatPaginator;
     dataSource = new MatTableDataSource<any>([]);
     constructor(public appService: AppService,
-        public dialogRef: MatDialogRef<LoanDetailsomponent>,) {
+        public dialogRef: MatDialogRef<LoanDetailPopComponent>,) {
 
     }
     public ngOnInit(): void {

@@ -20,6 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/SBDC-Impact-Predictor-FE/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",

@@ -27,6 +27,8 @@ export class AppService {
 
     public totalNumberofSBCLoans: number = 0;
 
+    public fromLoginPage: boolean = false;
+
     constructor(
         private httpClient: HttpClient
     ) {}

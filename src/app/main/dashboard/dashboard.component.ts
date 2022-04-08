@@ -27,8 +27,58 @@ export class DashboardComponent implements OnInit {
     public showResult: boolean = false;
 
     public locations: Array<string> = [
-        "Texas"
+        "Texas",
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
     ];
+
     public loanDetails!: Array<any>;
     public commercialLoanCount!: number;
     public smallBusinessLoanCount!: number;
@@ -44,7 +94,7 @@ export class DashboardComponent implements OnInit {
     }
 
     public importLoan(): void {
-        
+
     }
 
     public scroll(): void {
@@ -69,7 +119,7 @@ export class DashboardComponent implements OnInit {
     public goToCalculationPage(): void {
         //this.appService.totalNumberofSBCLoans = 
         this.router.navigateByUrl("main/costprojection");
-    }    
+    }
     public displayLoanDetails(): void {
         const dialogRef = this.dialog.open(LoanDetailPopComponent, {
             data: this.loanDetails
@@ -84,8 +134,8 @@ export class DashboardComponent implements OnInit {
                 if (loanDetails) {
 
                     this.loanDetails = loanDetails;
-                    
-                    this.loanDetails.map(loan =>{
+
+                    this.loanDetails.map(loan => {
                         loan.creditTypeName = this.getCreditTypeName(loan.CreditType);
                     });
                     this.commercialLoanCount = this.loanDetails.length;
@@ -118,5 +168,5 @@ export class DashboardComponent implements OnInit {
                 return ""
         }
     }
-    
+
 }

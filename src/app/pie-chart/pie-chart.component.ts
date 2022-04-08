@@ -27,9 +27,9 @@ export class PieChartComponent implements OnInit {
   public ngOnInit(): void {
 
     this.data = [
-      { Value: 37, Label: "Women / Minority Owned", Summary: "37%", color: "#8B5BB1"},
-      { Value: 25, Label: "Male Owned", Summary: "25%", color: "#EE5879" },
-      { Value: 10, Label: "Others", Summary: "10%", color: "#F8A15F"}
+      { Value: 15, Label: "Women / Minority Owned", Summary: "15%", color: "#8B5BB1"},
+      { Value: 45, Label: "Male Owned", Summary: "45%", color: "#EE5879" },
+      { Value: 40, Label: "Others", Summary: "40%", color: "#F8A15F"}
     ];
   }
 

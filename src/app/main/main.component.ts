@@ -13,6 +13,7 @@ export class MainComponent {
       private router: Router
   ) { 
       this.appService.pageTitle = "Dashboard";
+      this.appService.fromLoginPage = false;
   }
 
   public goToHome() {

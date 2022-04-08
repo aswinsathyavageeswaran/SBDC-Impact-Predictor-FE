@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   public signIn(): void {
+    this.appService.fromLoginPage = true;
     this.appService.isLoading = true;
     var root = this;
     setTimeout(() => {

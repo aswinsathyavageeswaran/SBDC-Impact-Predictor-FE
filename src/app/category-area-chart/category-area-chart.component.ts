@@ -8,7 +8,7 @@ import { AppService } from "../app.service";
   styleUrls: ["./category-area-chart.component.scss"]
 })
 export class CategoryAreaChart implements OnInit {
-    public img_name:string = "Atlanta_business.PNG";
+    public img_name:string = "Texas_business.PNG";
     constructor(
         private appService: AppService
     ) {

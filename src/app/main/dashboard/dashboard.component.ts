@@ -110,9 +110,16 @@ export class DashboardComponent implements OnInit {
         //this.appService.totalNumberofSBCLoans = 
         this.router.navigateByUrl("main/costprojection");
     }
-    public displayLoanDetails(): void {
+    public displayLoanDetails(totalLoans: boolean): void {
+        let loanList = [];
+        if (totalLoans) {
+            loanList = this.loanDetails;
+        }
+        else {
+            loanList = this.loanDetails.filter(loan => loan.MinorityOwned)
+        }
         const dialogRef = this.dialog.open(LoanDetailPopComponent, {
-            data: this.loanDetails
+            data: loanList
         });
     }
 

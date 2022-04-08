@@ -33,7 +33,7 @@
     <div *ngIf="showResult">
         <div class="count-container">
             <div class="circle-wrap">
-                <div class="round-circle red" (click)="displayLoanDetails();">
+                <div class="round-circle red" (click)="displayLoanDetails(true);">
                     <h6 class="heading">
                         Total Commercial
                         <br />
@@ -43,7 +43,7 @@
                         </div>
                     </h6>
                 </div>
-                <div class="round-circle green" (click)="displayLoanDetails();">
+                <div class="round-circle green" (click)="displayLoanDetails(false);">
                     <h6 class="heading">
                         Total Small
                         <br />

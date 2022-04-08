@@ -1,10 +1,69 @@
 <div class="container">
     <div class="row">
+        <div class="col-6">
+            <h5 class="card-title">SBDC time per Loan (Minutes)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter SBDC time per Loan in minutes"
+                    [(ngModel)]="sbdcTimePerLoan" />
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h5 class="card-title">Number of Loans</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter number of Loans"
+                    [(ngModel)]="loanCount" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <h5 class="card-title">Number of employees to be trained</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Number of employees to be trained"
+                    [(ngModel)]="numberofEmployees" />
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h5 class="card-title">Annual Training Time (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Annual Training Time" [(ngModel)]="annualTrainingTime" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <h5 class="card-title">SBDC data reporting data preparation (Hour)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter SBDC data reporting data preparation in hours"
+                    [(ngModel)]="sbdcDataReportingTime" />
+            </div>
+        </div>
+        <div class="col-6">
+            <h5 class="card-title">Employee Cost per hour ($)</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Cost per hour" [(ngModel)]="costPerHour" />
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row">
         <div class="col-4">
             <h5 class="card-title">SBDC time per Loan (Minutes)</h5>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Enter SBDC time per Loan in minutes"
                     [(ngModel)]="sbdcTimePerLoan" />
+            </div>
+        </div>
+
+        <div class="col-4">
+            <h5 class="card-title">Number of Loans</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter number of Loans"
+                    [(ngModel)]="loanCount" />
             </div>
         </div>
 
@@ -34,20 +93,12 @@
         </div>
 
         <div class="col-4">
-            <h5 class="card-title">Number of Loans</h5>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter number of Loans"
-                    [(ngModel)]="loanCount" />
-            </div>
-        </div>
-
-        <div class="col-4">
             <h5 class="card-title">Employee Cost per hour ($)</h5>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Enter Cost per hour" [(ngModel)]="costPerHour" />
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="row">
         <div class="col-12 text-center">
             <button type="button" class="btn btn-primary calc-btn clear-btn" (click)="clear();">Clear</button>
@@ -58,32 +109,54 @@
 </div>
 <div class="result-wrap">
     <div>
-        <div class="result">
-            <div class="hours">
-                {{totalEstimatedTimeToCollectData}}
-            </div>
-        </div>
-        <div class="txt">Estimated time to collect data for all the Small Business loans in the future</div>
-    </div>
-    <div>
         <div class="result cost">
-            <div class="amount" [ngClass]="{'four': (totalCostPerson < 10000 && totalCostPerson > 999), 'five': (totalCostPerson < 100000 && totalCostPerson > 9999), 
-                                        'six': (totalCostPerson < 1000000 && totalCostPerson > 99999) }">
-                {{totalCostPerson}}
+            <div class="amount" [ngClass]="{'four': (totalCostPerLoan < 10000 && totalCostPerLoan > 999), 'five': (totalCostPerLoan < 100000 && totalCostPerLoan > 9999), 
+                                        'six': (totalCostPerLoan < 1000000 && totalCostPerLoan > 99999) }">
+                {{totalCostPerLoan}}
             </div>
             <div class="dollar">
                 $
             </div>
         </div>
-        <div class="txt cost-txt">Total Cost per employee</div>
+        <div class="txt cost-txt">SBDC Cost Per Loan</div>
     </div>
+
     <div>
-        <div class="result">
-            <div class="hours">
-                {{totalTimeForReporting}}
+        <div class="result cost">
+            <div class="amount" [ngClass]="{'four': (totalCostForAllLoans < 10000 && totalCostForAllLoans > 999), 'five': (totalCostForAllLoans < 100000 && totalCostForAllLoans > 9999), 
+                'six': (totalCostForAllLoans < 1000000 && totalCostForAllLoans > 99999) }">
+                {{totalCostForAllLoans}}
+            </div>
+            <div class="dollar">
+                $
             </div>
         </div>
-        <div class="txt">Estimated time to perfect the reporting of the ECOA SBDC in the future</div>
+        <div class="txt cost-txt">Total SBDC Cost</div>
+    </div>
+    
+    <div>
+        <div class="result cost">
+            <div class="amount" [ngClass]="{'four': (totalTraningCost < 10000 && totalTraningCost > 999), 'five': (totalTraningCost < 100000 && totalTraningCost > 9999), 
+                'six': (totalTraningCost < 1000000 && totalTraningCost > 99999) }">
+                {{totalTraningCost}}
+            </div>
+            <div class="dollar">
+                $
+            </div>
+        </div>
+        <div class="txt cost-txt">Total Training Cost</div>
+    </div>
+    <div>
+        <div class="result cost">
+            <div class="amount" [ngClass]="{'four': (totalCostForReportingPrep < 10000 && totalCostForReportingPrep > 999), 'five': (totalCostForReportingPrep < 100000 && totalCostForReportingPrep > 9999), 
+                                        'six': (totalCostForReportingPrep < 1000000 && totalCostForReportingPrep > 99999) }">
+                {{totalCostForReportingPrep}}
+            </div>
+            <div class="dollar">
+                $
+            </div>
+        </div>
+        <div class="txt cost-txt">Total Cost of Reporting Prep</div>
     </div>
 </div>
 
@@ -91,10 +164,10 @@
 </div>
 
 <div class="total-cost-header">
-    Total Cost for {{numberofEmployees}} Employees
+    Total Annual Cost
 </div>
 <div class="total-cost">
-    $ {{totalCostToTheBank}}
+    $ {{totalAnnualCost}}
 </div>
 
 <app-loader></app-loader>

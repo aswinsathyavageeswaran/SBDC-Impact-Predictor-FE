@@ -20,6 +20,13 @@ export class CostProjectionComponent implements OnInit {
     public totalCostPerson: number = 0;
 
     public totalCostToTheBank: number = 0;
+    
+    public totalCostPerLoan: number = 0;
+    public totalCostForAllLoans: number = 0;
+    public trainingCostPerEmployee: number = 0;
+    public totalTraningCost: number = 0;
+    public totalCostForReportingPrep: number = 0;
+    public totalAnnualCost: number = 0;
 
 
     public enableSubmit: boolean = true;
@@ -34,6 +41,7 @@ export class CostProjectionComponent implements OnInit {
         // setTimeout(() => {
         //     root.appService.isLoading = false;
         // }, 2000);
+        this.loanCount = this.appService.totalNumberofSBCLoans;
         this.calculate();
     }
 
@@ -44,15 +52,24 @@ export class CostProjectionComponent implements OnInit {
             root.appService.isLoading = false;
         }, 2000);
 
-        this.totalEstimatedTimeToCollectData = this.appService.totalNumberofSBCLoans * (this.sbdcTimePerLoan / 60);
-        this.totalTimeForReporting = this.appService.totalNumberofSBCLoans * this.sbdcDataReportingTime;
+        this.totalEstimatedTimeToCollectData = this.loanCount * (this.sbdcTimePerLoan / 60);
+        this.totalTimeForReporting = this.loanCount * this.sbdcDataReportingTime;
         this.totalCostPerson = this.annualTrainingTime * this.costPerHour;
         this.totalCostToTheBank = this.totalCostPerson * this.numberofEmployees;
         
-        this.totalEstimatedTimeToCollectData = Math.round(this.totalEstimatedTimeToCollectData)
-        this.totalTimeForReporting = Math.round(this.totalTimeForReporting)
-        this.totalCostPerson = Math.round(this.totalCostPerson * 100) / 100
-        this.totalCostToTheBank = Math.round(this.totalCostToTheBank * 100) / 100
+        this.totalCostPerLoan = Math.round((this.sbdcTimePerLoan / 60) * this.costPerHour);
+        this.totalCostForAllLoans = Math.round(this.totalCostPerLoan * this.loanCount);
+        this.trainingCostPerEmployee = Math.round(this.annualTrainingTime * this.costPerHour);
+        this.totalTraningCost = Math.round(this.numberofEmployees * this.trainingCostPerEmployee);
+        this.totalCostForReportingPrep = this.sbdcDataReportingTime * this.costPerHour;
+
+        this.totalAnnualCost = this.totalCostPerLoan + this.totalCostForAllLoans + this.trainingCostPerEmployee + this.totalTraningCost + this.totalCostForReportingPrep;
+
+        this.totalEstimatedTimeToCollectData = Math.round(this.totalEstimatedTimeToCollectData);
+        this.totalTimeForReporting = Math.round(this.totalTimeForReporting);
+        this.totalCostPerson = Math.round(this.totalCostPerson * 100) / 100;
+        this.totalCostToTheBank = Math.round(this.totalCostToTheBank * 100) / 100;
+    
     }
 
     public clear(): void{

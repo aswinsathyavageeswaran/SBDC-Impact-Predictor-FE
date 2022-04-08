@@ -7,11 +7,11 @@ import { AppService } from "../app.service";
     templateUrl: "./loan-details.component.html",
     styleUrls: ["./loan-details.component.scss"]
 })
-export class LoanDetailsomponent implements OnInit {
+export class LoanDetailPopComponent implements OnInit {
     public displayedColumns: Array<string> = ['creditTypeName', 'AmountApplied', 'AmountApproved', 'ActionTakenDate', 'Status'];
     constructor(public appService: AppService,
         @Inject(MAT_DIALOG_DATA) public loanDetails: Array<any>,
-        public dialogRef: MatDialogRef<LoanDetailsomponent>,) {
+        public dialogRef: MatDialogRef<LoanDetailPopComponent>,) {
 
     }
     public ngOnInit(): void {

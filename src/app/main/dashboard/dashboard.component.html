@@ -3,74 +3,75 @@
         <div class="card-body">
             <h6 class="card-title">YEAR</h6>
             <div class="row">
-              <div class="year-dropdown">
-                <select class="custom-select">
-                  <option *ngFor="let year of years" value="{{year}}" selected>{{year}}</option>
-                </select>
-              </div>
-              <div class="import-button">
-                  <button type="submit" class="btn btn-primary" (click)="importLoan();">Import Loans</button>
-              </div>
-              <div class="import-button">
-                <select class="custom-select" [(ngModel)]="selectedLocation" (change)="scroll()">
-                    <option value="" selected>Location</option>
-                    <option *ngFor="let loc of locations" value="{{loc}}" selected>{{loc}}</option>
-                </select>
-              </div>
+                <div class="year-dropdown">
+                    <select class="custom-select" [(ngModel)]="selectedYear" (change)="yearChanged()">
+                        <option *ngFor="let year of years" value="{{year}}" selected>{{year}}</option>
+                    </select>
+                </div>
+                <div class="import-button">
+                    <button type="submit" class="btn btn-primary" (click)="importLoan();">Import Loans</button>
+                </div>
+                <div class="import-button">
+                    <select class="custom-select" [(ngModel)]="selectedLocation" (change)="scroll()">
+                        <option value="" selected>Location</option>
+                        <option *ngFor="let loc of locations" value="{{loc}}" selected>{{loc}}</option>
+                    </select>
+                </div>
             </div>
-          </div>
-          <div class="map">
-            
-          </div>
+        </div>
+        <div class="cost-button-container">
+            <button type="submit" class="btn btn-primary" (click)="goToCalculationPage();">Calculate Cost
+                Projection</button>
+        </div>
     </div>
     <div class="map-wrap">
         <google-map></google-map>
     </div>
-    <div class="count-container">
-        <div class="circle-wrap" (click)="displayLoanDetails()">
-            <div class="round-circle red">
-                <h6 class="heading">
-                    Commercial 
-                    <br />
-                    Loans
-                    <div class="value">
-                        {{commercialLoanCount}}
-                    </div>
-                </h6>
+    <div *ngIf="showResult">
+        <div class="count-container">
+            <div class="circle-wrap">
+                <div class="round-circle red" (click)="displayLoanDetails();">
+                    <h6 class="heading">
+                        Total Commercial
+                        <br />
+                        Loans
+                        <div class="value">
+                            {{commercialLoanCount}}
+                        </div>
+                    </h6>
+                </div>
+                <div class="round-circle green" (click)="displayLoanDetails();">
+                    <h6 class="heading">
+                        Total Small
+                        <br />
+                        Business Loans
+                        <div class="value">
+                            {{smallBusinessLoanCount}}
+                        </div>
+                    </h6>
+                </div>
+                <div class="round-circle blue">
+                    <h6 class="heading">
+                        Total {{selectedLocation}} Small Business
+                        <br />
+                        Count
+                        <div class="value">
+                            50
+                        </div>
+                    </h6>
+                </div>
             </div>
-            <div class="round-circle green">
-                <h6 class="heading">
-                    Small Business 
-                    <br />
-                    Loans
-                    <div class="value">
-                        {{smallBusinessLoanCount}}
-                    </div>
-                </h6>
+        </div>
+    
+        <div class="graph">
+            <div class="pie-chart">
+                <pie-chart></pie-chart>
             </div>
-            <div class="round-circle blue">
-                <h6 class="heading">
-                    Total Business 
-                    <br />
-                    Count
-                    <div class="value">
-                        50
-                    </div>
-                </h6>
+            <div class="category-graph">
+                <category-area-chart></category-area-chart>
             </div>
         </div>
     </div>
-
-    <div class="graph">
-        <div class="pie-chart">
-            <pie-chart></pie-chart>
-        </div>
-        <div class="category-graph">
-            <category-area-chart></category-area-chart>
-        </div>
-    </div>
-    <!-- <div class="loan-details">
-        <loan-details></loan-details>
-    </div> -->
-
 </div>
+
+<app-loader></app-loader>

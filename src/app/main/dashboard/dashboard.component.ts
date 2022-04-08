@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { MatDialog } from "@angular/material/dialog";
-import { LoanDetailsomponent } from 'src/app/loan-details/loan-details.component';
+import { LoanDetailPopComponent } from 'src/app/loan-details/loan-details.component';
 
 @Component({
     selector: 'app-dashboard',
@@ -11,6 +12,7 @@ import { LoanDetailsomponent } from 'src/app/loan-details/loan-details.component
 export class DashboardComponent implements OnInit {
     constructor(
         private appService: AppService,
+        private router: Router,
         public dialog: MatDialog,
     ) { }
 
@@ -21,6 +23,8 @@ export class DashboardComponent implements OnInit {
         2021
     ];
     public selectedLocation: string = "";
+    public selectedYear: any = 0;
+    public showResult: boolean = false;
 
     public locations: Array<string> = [
         "Texas"
@@ -30,6 +34,11 @@ export class DashboardComponent implements OnInit {
     public smallBusinessLoanCount!: number;
 
     public ngOnInit(): void {
+        this.appService.isLoading = true;
+        var root = this;
+        setTimeout(() => {
+            root.appService.isLoading = false;
+        }, 2000);
         this.appService.pageTitle = "Dashboard";
         this.getLoanDetails();
     }
@@ -39,6 +48,12 @@ export class DashboardComponent implements OnInit {
     }
 
     public scroll(): void {
+        this.appService.isLoading = true;
+        var root = this;
+        setTimeout(() => {
+            root.appService.isLoading = false;
+            root.showResult = true;
+        }, 2000);
         if (this.selectedLocation == "Texas") {
             var test = document.getElementById("my-image");
             if (test) {
@@ -47,8 +62,16 @@ export class DashboardComponent implements OnInit {
         }
     }
 
+    public yearChanged(): void {
+
+    }
+
+    public goToCalculationPage(): void {
+        //this.appService.totalNumberofSBCLoans = 
+        this.router.navigateByUrl("main/costprojection");
+    }    
     public displayLoanDetails(): void {
-        const dialogRef = this.dialog.open(LoanDetailsomponent, {
+        const dialogRef = this.dialog.open(LoanDetailPopComponent, {
             data: this.loanDetails
         });
     }

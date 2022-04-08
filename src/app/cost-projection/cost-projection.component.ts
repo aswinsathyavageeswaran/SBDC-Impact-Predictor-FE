@@ -13,7 +13,7 @@ export class CostProjectionComponent implements OnInit {
     public annualTrainingTime: number = 0;
     public sbdcDataReportingTime: number = 0;
     public loanCount: number = 0;
-    public costPerHour: number = 20;
+    public costPerHour: number = 0;
 
     public totalEstimatedTimeToCollectData: number = 0;
     public totalTimeForReporting: number = 0;
@@ -44,10 +44,28 @@ export class CostProjectionComponent implements OnInit {
         setTimeout(() => {
             root.appService.isLoading = false;
         }, 2000);
-        this.totalEstimatedTimeToCollectData = this.appService.totalNumberofSBCLoans * this.sbdcTimePerLoan;
+
+        this.totalEstimatedTimeToCollectData = this.appService.totalNumberofSBCLoans * (this.sbdcTimePerLoan / 60);
         this.totalTimeForReporting = this.appService.totalNumberofSBCLoans * this.sbdcDataReportingTime;
         this.totalCostPerson = this.annualTrainingTime * this.costPerHour;
-
         this.totalCostToTheBank = this.totalCostPerson * this.numberofEmployees;
+        
+        this.totalEstimatedTimeToCollectData = Math.round(this.totalEstimatedTimeToCollectData)
+        this.totalTimeForReporting = Math.round(this.totalTimeForReporting)
+        this.totalCostPerson = Math.round(this.totalCostPerson * 100) / 100
+        this.totalCostToTheBank = Math.round(this.totalCostToTheBank * 100) / 100
+    }
+
+    public clear(): void{
+     this.sbdcTimePerLoan = 0;
+     this.numberofEmployees = 0;
+     this.annualTrainingTime = 0;
+     this.sbdcDataReportingTime = 0;
+     this.loanCount = 0;
+     this.costPerHour = 0;
+     this.totalEstimatedTimeToCollectData = 0;
+     this.totalTimeForReporting = 0;
+     this.totalCostPerson = 0;
+     this.totalCostToTheBank = 0;
     }
 }

@@ -44,6 +44,7 @@
     font-size: 50px;
     font-weight: bold;
     font-style: italic;
+    width: 84px;
 }
 
 .card-title {
@@ -53,16 +54,39 @@
 
 .calc-btn {
     margin-top: 50px;
+    text-transform: uppercase;
+}
+
+.clear-btn {
+    margin-right: 25px;
+    background: #badff4;
+    border-color: #badff4;
+    color: #000;
+    box-shadow: 1px 1px 1px #c9c9ce;
 }
 
 .amount {
     position: absolute;
     font-size: 50px;
-    top: 43px;
+    top: 88px;
     left: 93px;
     font-size: 45px;
     font-weight: bold;
     font-style: italic;
+    width: 90px;
+
+    &.four {
+        font-size: 40px;
+    }
+    &.five {
+        font-size: 33px;
+        top: 94px;
+    }
+    &.six {
+        font-size: 28px;
+        top: 94px;
+    }
+
 }
 
 .dollar-img {
@@ -71,9 +95,28 @@
 
 .dollar {
     position: absolute;
-    top: 86px;
+    top: 43px;
     left: 124px;
     font-size: 45px;
     font-weight: bold;
     font-style: italic;
+}
+
+.separator {
+    border-bottom: 2px solid #d4d4d4;
+    margin: 1rem 17rem;
+}
+
+.total-cost-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 1rem;
+}
+
+.total-cost {
+    text-align: center;
+    font-size: 37px;
+    font-weight: bold;
 }

@@ -50,8 +50,10 @@
     </div>
     <div class="row">
         <div class="col-12 text-center">
-            <button type="button" [disabled]="!enableSubmit" class="btn btn-primary calc-btn" (click)="calculate();">Calculate</button>
+            <button type="button" class="btn btn-primary calc-btn clear-btn" (click)="clear();">Clear</button>
+            <button type="button" class="btn btn-primary calc-btn" (click)="calculate();">Calculate</button>
         </div>
+        
     </div>
 </div>
 <div class="result-wrap">
@@ -61,11 +63,12 @@
                 {{totalEstimatedTimeToCollectData}}
             </div>
         </div>
-        <div class="txt">Estimated time to collect data for each loan in the future</div>
+        <div class="txt">Estimated time to collect data for all the Small Business loans in the future</div>
     </div>
     <div>
         <div class="result cost">
-            <div class="amount">
+            <div class="amount" [ngClass]="{'four': (totalCostPerson < 10000 && totalCostPerson > 999), 'five': (totalCostPerson < 100000 && totalCostPerson > 9999), 
+                                        'six': (totalCostPerson < 1000000 && totalCostPerson > 99999) }">
                 {{totalCostPerson}}
             </div>
             <div class="dollar">
@@ -82,6 +85,16 @@
         </div>
         <div class="txt">Estimated time to perfect the reporting of the ECOA SBDC in the future</div>
     </div>
+</div>
+
+<div class="separator">
+</div>
+
+<div class="total-cost-header">
+    Total Cost for {{numberofEmployees}} Employees
+</div>
+<div class="total-cost">
+    $ {{totalCostToTheBank}}
 </div>
 
 <app-loader></app-loader>

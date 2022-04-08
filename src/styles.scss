@@ -72,6 +72,10 @@
         background-color: #176373;
         border-color: #176373;
     }
+    &:active, &:focus {
+        background-color: #176373;
+        border-color: #176373;
+    }
 }
 
 .btn-primary.disabled, .btn-primary:disabled {

@@ -18,8 +18,9 @@
         .avatar {
             margin-left: auto;
             margin-right: 1rem;
+            margin-top: 15px;
             img {
-                width: 70px;
+                width: 33px;
                 &:hover {
                     cursor: pointer;
                 }
@@ -43,6 +44,7 @@
 .home-icon {
     margin-top: 16px;
     margin-left: 32px;
+    margin-right: 14px;
     &:hover {
         cursor: pointer;
     }

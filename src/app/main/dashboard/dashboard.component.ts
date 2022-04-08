@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { AppService } from 'src/app/app.service';
 })
 export class DashboardComponent implements OnInit {
     constructor(
-        private appService: AppService
+        private appService: AppService,
+        private router: Router
     ) { }
 
     public years: Array<number> = [
@@ -18,12 +20,19 @@ export class DashboardComponent implements OnInit {
         2021
     ];
     public selectedLocation: string = "";
+    public selectedYear: any = 0;
+    public showResult: boolean = false;
 
     public locations: Array<string> = [
         "Texas"
     ];
 
     public ngOnInit(): void {
+        this.appService.isLoading = true;
+        var root = this;
+        setTimeout(() => {
+            root.appService.isLoading = false;
+        }, 2000);
         this.appService.pageTitle = "Dashboard";
     }
 
@@ -32,12 +41,27 @@ export class DashboardComponent implements OnInit {
     }
 
     public scroll(): void {
+        this.appService.isLoading = true;
+        var root = this;
+        setTimeout(() => {
+            root.appService.isLoading = false;
+            root.showResult = true;
+        }, 2000);
         if (this.selectedLocation == "Texas") {
             var test = document.getElementById("my-image");
             if (test) {
                 test.style.top = "-410px"
             }
         }
+    }
+
+    public yearChanged(): void {
+
+    }
+
+    public goToCalculationPage(): void {
+        //this.appService.totalNumberofSBCLoans = 
+        this.router.navigateByUrl("main/costprojection");
     }
     
 }

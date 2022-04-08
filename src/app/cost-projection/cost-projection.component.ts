@@ -23,10 +23,21 @@ export class CostProjectionComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        this.appService.isLoading = true;
+        var root = this;
+        setTimeout(() => {
+            root.appService.isLoading = false;
+        }, 2000);
         this.calculate();
     }
 
     public calculate(): void {
+        this.appService.totalNumberofSBCLoans = 50;
+        this.appService.isLoading = true;
+        var root = this;
+        setTimeout(() => {
+            root.appService.isLoading = false;
+        }, 2000);
         this.totalEstimatedTimeToCollectData = this.appService.totalNumberofSBCLoans * this.defaultTime;
         this.totalTimeForReporting = this.appService.totalNumberofSBCLoans * 10;
         this.totalCostPerson = this.trainingTime * this.costPerHour;

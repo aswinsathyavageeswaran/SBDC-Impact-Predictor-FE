@@ -9,9 +9,9 @@
       <div class="col-sm">
         <div class="well">
           <div class="logo">
-            <img src="../assets/equallend_logo.jpg" alt="Equallend Logo">
+            <img src="../../assets/equallend_logo.png" alt="Equallend Logo">
           </div>
-          <h4 class="text-center mb-4">Login</h4>
+          <h4 class="text-center mb-4" style="margin-top: 1rem;">Login</h4>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Username</label>
             <input type="text" class="form-control" [(ngModel)]="username" id="exampleFormControlInput1" placeholder="Enter Username">
@@ -23,7 +23,7 @@
           <div class="link-wrap">
             Not Registered? <a class="link" (click)="redirectToReg();">Sign Up</a>
           </div>
-          <div class="text-right">
+          <div class="text-center" style="margin-top: 1rem;">
             <button type="submit" class="btn btn-primary" (click)="signIn();">Sign In</button>
           </div>
         </div>

@@ -29,11 +29,11 @@ export class CostProjectionComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.appService.isLoading = true;
-        var root = this;
-        setTimeout(() => {
-            root.appService.isLoading = false;
-        }, 2000);
+        // this.appService.isLoading = true;
+        // var root = this;
+        // setTimeout(() => {
+        //     root.appService.isLoading = false;
+        // }, 2000);
         this.calculate();
     }
 

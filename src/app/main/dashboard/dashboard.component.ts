@@ -85,10 +85,6 @@ export class DashboardComponent implements OnInit {
 
     public ngOnInit(): void {
         this.appService.isLoading = true;
-        var root = this;
-        setTimeout(() => {
-            root.appService.isLoading = false;
-        }, 2000);
         this.appService.pageTitle = "Dashboard";
         this.getLoanDetails();
     }
@@ -129,12 +125,12 @@ export class DashboardComponent implements OnInit {
     private getLoanDetails(): void {
         var year = 2021;
         var place = "California";
-        this.appService.getLoanDetails(year, place).subscribe(
+        this.appService.getLoanDetails(year, place)
+        .subscribe(
             (loanDetails: Array<any>) => {
+                this.appService.isLoading = false;
                 if (loanDetails) {
-
                     this.loanDetails = loanDetails;
-
                     this.loanDetails.map(loan => {
                         loan.creditTypeName = this.getCreditTypeName(loan.CreditType);
                     });

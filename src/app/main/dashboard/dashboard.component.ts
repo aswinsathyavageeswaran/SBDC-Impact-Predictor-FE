@@ -107,7 +107,6 @@ export class DashboardComponent implements OnInit {
     }
 
     public goToCalculationPage(): void {
-        //this.appService.totalNumberofSBCLoans = 
         this.router.navigateByUrl("main/costprojection");
     }
     public displayLoanDetails(totalLoans: boolean): void {

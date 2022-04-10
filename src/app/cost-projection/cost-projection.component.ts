@@ -8,12 +8,12 @@ import { AppService } from '../app.service';
 })
 export class CostProjectionComponent implements OnInit {
     
-    public sbdcTimePerLoan: number = 0;
-    public numberofEmployees: number = 0;
-    public annualTrainingTime: number = 0;
-    public sbdcDataReportingTime: number = 0;
+    public sbdcTimePerLoan: number = 30;
+    public numberofEmployees: number = 10;
+    public annualTrainingTime: number = 5;
+    public sbdcDataReportingTime: number = 30;
     public loanCount: number = 0;
-    public costPerHour: number = 0;
+    public costPerHour: number = 30;
 
     public totalEstimatedTimeToCollectData: number = 0;
     public totalTimeForReporting: number = 0;
